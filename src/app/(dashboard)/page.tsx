@@ -6,11 +6,12 @@ import {redirect} from "next/navigation";
 
 
 
+
 const Home = async() => {
     const session=await auth.api.getSession({
         headers:await headers()
     });
-    if(!session) redirect("/sign-in")
+     if(!session) redirect("/sign-in")
     return <HomeView/>
 };
 
